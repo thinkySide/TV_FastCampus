@@ -12,6 +12,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loginButton: UIButton!
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +26,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func buttonDidTap(_ sender: UIButton) {
+        view.window?.rootViewController = storyboard?.instantiateViewController(withIdentifier: "tabBar")
     }
     
 }
